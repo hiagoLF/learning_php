@@ -1,11 +1,22 @@
+<?php
+session_start();
+
+if ($_SESSION['advice']) {
+    echo $_SESSION['advice'];
+    $_SESSION['advice'] = '';
+}
+
+require('header/index.php')
+?>
+
 <form method="POST" action="./receiver.php">
     <h1>Login</h1>
 
     <div>
-        <label for="login">
+        <label for="name">
             Nome
         </label>
-        <input type="text" name="login">
+        <input type="text" name="name">
     </div>
 
     <br />
@@ -20,10 +31,10 @@
     <br />
 
     <div>
-        <label for="password">
-            Senha
+        <label for="idade">
+            Idade
         </label>
-        <input type="password" name="password">
+        <input type="text" name="age">
     </div>
 
     <br />
